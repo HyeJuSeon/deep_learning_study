@@ -35,6 +35,7 @@ weight의 크기는 입력 데이터의 변수 개수와 출력 개수로 결정
 ![image](https://user-images.githubusercontent.com/55024771/103687974-7d5f7100-4fd4-11eb-9a0f-8a8c73fba137.png)
 
 <br>
+<br>
 
 **hypothesis는 XW로 변함이 없다**
 
