@@ -34,7 +34,7 @@ cost가 가장 작은 가설
 
 ## 5. Cost, Cost function
 
-cost(error): 가설과 실제 데이터의 차이
+cost(error): 가설(예측값)과 실제 데이터의 차이
 
 ![image](https://user-images.githubusercontent.com/55024771/103659779-29429580-4fb0-11eb-9afa-8b6e0f8d8835.png)
 
