@@ -1,9 +1,12 @@
 # lec01 - 기본적인 Machine Learning의 용어와 개념 설명
 
-1. What is ML?
-2. What is learning? &nbsp;&nbsp; 1) supervised &nbsp;&nbsp; 2) unsupervised
-3. What is regression?
-4. What is classification?
+[1. What is ML?](#1-what-is-ml)
+
+[2. What is learning?](#2-what-is-learning) &nbsp;&nbsp; 1) supervised &nbsp;&nbsp; 2) unsupervised
+
+[3. What is regression?](3-what-is-regression)
+
+[4. What is classification?](4-what-is-classification)
 
 ## 1. What is ML?
 머신러닝은 일종의 소프트웨어이다. explicit하게 프로그래밍하기 어려운 경우가 있다. 따라서 일일이 프로그래밍하지 말고 자동적으로 할 수 있도록 데이터를 학습해서 배우는 프로그램이다.
