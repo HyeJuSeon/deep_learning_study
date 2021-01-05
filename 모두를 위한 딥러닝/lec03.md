@@ -33,6 +33,7 @@ cost를 최소화하는 W, b를 찾음
 ![image](https://user-images.githubusercontent.com/55024771/103667818-bccc9400-4fb9-11eb-9202-c995760c2837.png)
 
 <br>
+<br>
 
 m의 계수는 cost에 영향을 거의 주지 않음
 
