@@ -1,11 +1,16 @@
 # lec02 - Simple Linear Regression
 
-1. Regression
-2. Linear Regression
-3. Hypothesis
-4. Which hypothesis is better?
-5. Cost, Cost function
-6. Goal: Minimize cost
+[1. Regression](#1-regression)
+
+[2. Linear Regression](#2-linear-regression)
+
+[3. Hypothesis](#3-hypothesis)
+
+[4. Which hypothesis is better?](#4-which-hypothesis-is-better)
+
+[5. Cost, Cost function](#5-cost-cost-function)
+
+[6. Goal: Minimize cost](#6-goal-minimize-cost)
 
 ## 1. Regression
 
