@@ -32,32 +32,41 @@ cost를 최소화하는 W, b를 찾음
 
 ![image](https://user-images.githubusercontent.com/55024771/103667818-bccc9400-4fb9-11eb-9202-c995760c2837.png)
 
+<br>
 
 m의 계수는 cost에 영향을 거의 주지 않음
 
-
+<br>
 
 ![image](https://user-images.githubusercontent.com/55024771/103668133-2351b200-4fba-11eb-9326-4455ee3380e2.png)
 
 ![image](https://user-images.githubusercontent.com/55024771/103668333-55fbaa80-4fba-11eb-9511-b1657b0494b2.png)
 
+<br>
 
-alpha: learning rate, 즉 업데이트한 미분값의 반영 정도를 결정
+alpha값은 learning rate로 업데이트한 미분값의 반영 정도를 결정
 
+<br>
 
 ![image](https://user-images.githubusercontent.com/55024771/103668666-af63d980-4fba-11eb-8c6d-2319954c257e.png)
 
+<br>
 
 gradient descent는 원래 W에서 cost function을 W로 편미분한 값에 특정값 alpha(learning rate)를 뺀 것
 
+<br>
 
 ![image](https://user-images.githubusercontent.com/55024771/103668800-dd491e00-4fba-11eb-81d4-71376d37be71.png)
 
+<br>
 
 local minimum이 여러 개인 경우 global minimum인지 확인할 수 없기 때문에 gradient descent를 사용할 수 없다.
 
+<br>
 
 ![image](https://user-images.githubusercontent.com/55024771/103668967-1da89c00-4fbb-11eb-832f-e2aece9708c2.png)
 
+<br>
 
 local minimum과 global minimum이 동일한 경우엔 사용 가능
+
