@@ -32,6 +32,9 @@ label이 정해지지 않은 데이터로 학습한다.
 ----
 
 ## lab01
+
+<br>
+
 ![image](https://user-images.githubusercontent.com/55024771/103656515-07471400-4fac-11eb-9361-310fb34132f6.png)
 
 TensorFlow: data flow graphs를 사용해서 numerical computation하는 라이브러리
