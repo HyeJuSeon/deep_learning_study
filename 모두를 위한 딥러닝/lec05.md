@@ -2,6 +2,8 @@
 
 ![image](https://user-images.githubusercontent.com/55024771/103753152-049cfb00-504e-11eb-84a7-f8c51d15acb4.png)
 
+<br>
+
 linear regression에서
 
 ![image](https://user-images.githubusercontent.com/55024771/103753869-e8e62480-504e-11eb-95a3-82dfad383efe.png)
