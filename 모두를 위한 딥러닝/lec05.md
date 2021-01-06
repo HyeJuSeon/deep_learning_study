@@ -43,3 +43,7 @@ C(H(x), y) = - y*log(H(x)) - (1-y)*log(1-H(x))
 
 ![image](https://user-images.githubusercontent.com/55024771/103784192-fd411600-507c-11eb-8596-7f5be116293d.png)
 
+**summary**
+
+![image](https://user-images.githubusercontent.com/55024771/103784592-7b9db800-507d-11eb-811e-cdd47cf323c7.png)
+
