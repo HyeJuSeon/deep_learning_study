@@ -89,3 +89,7 @@ selective search는 최초에는 pixel intensity 기반한 graph-based segment �
 #3. 다시 #1 region proposal 리스트 추가, #2 유사도가 비슷한 segment들 그룹핑을 계속 반복하면서 region proposal 수행
 
 <br>
+
+## selective search 실습
+
+[AlpacaDB selectivesearch](https://github.com/AlpacaDB/selectivesearch)
