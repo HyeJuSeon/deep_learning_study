@@ -93,3 +93,105 @@ selective search는 최초에는 pixel intensity 기반한 graph-based segment �
 ## selective search 실습
 
 [AlpacaDB selectivesearch](https://github.com/AlpacaDB/selectivesearch)
+
+<br>
+
+## Metric - IOU(Intersection of Union)
+
+- IOU = area of overlap / area of union
+
+<br>
+
+## NMS(Non Max Suppression)
+
+Detected Object의 bounding box 중에 가장 적합한 box를 선택하는 기법
+
+- 배경: Object Detection 알고리즘은 object가 있을만한 위치에 많은 detection을 수행하는 경향이 강함
+
+#1. 특정 confidence threshold 이하 bounding box 제거 (ex. confidence score < 0.5)
+#2. 가장 높은 confidence score를 가진 box 순으로 내림차순으로 정렬
+#3. 모든 box에 순차적으로 높은 confidence score를 가진 box와 겹치는 다른 box들을 모두 조사하여 IOU가 특정 threshold 이상인 box 모두 제거 (ex. IOU > 0.4)
+#4. 남아있는 box만 선택
+
+- confidence score가 높을수록, IOU threshold가 낮을수록 많은 box가 제거됨
+
+<br>
+
+## Metric - mAP(mean Average Precision)
+
+실제 Object가 Detected된 재현율(Recall)의 변화에 따른 정밀도(Precision)의 값을 평균한 성능 수치
+
+### 정밀도(Precision)와 재현율(Recall)
+
+- 주로 이진 분류(binary classification)에서 사용되는 성능 지표
+- 정밀도(precision): 예측을 positive로 한 대상 중 실제값이 positive로 일치한 데이터의 비율
+- 재현율(recall): 실제값이 positive인 대상 중 예측을 positive로 한 데이터의 비율
+
+<br>
+
+- Object Detection에서 개별 object에 대한 detection 예측이 성공했는지 여부를 IOU로 결정
+- 일반적으로 IOU가 0.5이상이면 예측 성공으로 인정 (PASCAL VOC Challenge 기준)
+
+<br>
+
+### 오차 행렬(Confusion Matrix)
+
+이진 분류의 예측 오류가 얼마인지와 더불어 어떠한 유형의 예측 오류가 발생하고 있는지를 나타내는 지표
+
+- TN(True Negative): 실제 N, 예측 N
+- FP(False Positive): 실제 N, 예측 P
+- FN(False Negative): 실제 P, 예측 N
+- TP(True Positive): 실제 P, 예측 P
+
+<br>
+
+- Precision = TP / (FP + TP)
+- Recall = TP / (FN + TP)
+
+<br>
+
+**업무에 따른 재현율(Recall)과 정밀도(Precision)의 상대적 중요도**
+- 재현율이 상대적으로 더 중요한 경우: 실제 positive인 데이터를 negative로 잘못 예측하면 업무상 큰 영향이 발생하는 경우 (ex. 암 진단, 금융사기 판별)
+- 정밀도가 상대적으로 더 중요한 경우: 실제 negative인 데이터를 positive로 잘못 예측하면 업무상 큰 영향이 발생하는 경우 (ex. 스팸 메일)
+
+<br>
+
+**정밀도와 재현율의 맹정**
+- 정밀도를 100%로 만드는 법: 확실한 기준이 되는 경우만 positive, 나머지는 모두 negative로 예측한다. 1 / (1 + 0)
+- 재현율을 100%로 만드는 법: 모든 경우를 positive로 예측한다. 1000 / (1000 + 0)
+
+<br>
+
+### Confidence 임계값에 따른 Precision-Recall 변화
+
+- Confidence 임계값이 낮을수록 더 많은 예측 Bbox를 만들게 되어 Precision은 낮아지고 Recall은 높아짐
+- Confidence 임계값이 높을수록 예측 Bbox를 만드는데 신중하게 되어 Precision은 높아지고 Recall은 낮아짐
+
+<br>
+
+**Precision Recall Trade-off**
+
+- confidence 임계값을 조정하면 precision 또는 recall의 수치를 높일 수 있지만, 둘은 상호 보완적인 평가 지표이기 때문에 어느 한쪽을 강제로 높이면 다른 하나의 수치는 떨어지기 쉬움
+
+<br>
+
+**Precision-Recall Curve**
+
+- Recall 값의 변화에 따른 Precision 값을 나타낸 곡선
+- 여기서 얻어진 Precision의 평균을 **AP(Average Precision)** 라고 하며, 일반적으로 정밀도 재현율 곡선의 면적 값으로 계산됨
+
+<br>
+
+**AP 계산**
+
+- 일반적으로 AP는 지그재그 형태로 나옴
+- 지그재그 형태를 최대 Precision값으로 연결해서 계단 형태로 만듦
+- 그래프 너비가 AP
+- 각 recall 포인트 별로 최대 precision 평균값을 구함
+
+<br>
+
+### mAP(mean Average Precision) 계산
+
+- AP는 한 개 object에 대한 성능 수치
+- mAP는 여러 objects의 AP를 평균한 값
