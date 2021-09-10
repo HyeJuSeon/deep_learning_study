@@ -18,7 +18,7 @@
 
 <br>
 
-## 4. CV study
+## 4. NLP
 
 <br>
 
